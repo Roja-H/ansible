@@ -5,3 +5,15 @@
   - name: printing variables
     ansible.builtin.debug:
      msg: "hello roja are you preparing for devops and trainer is sivakumar"
+
+- name: variables1
+  hosts: local
+  connection: local
+  vars:
+   name: roja
+   course: devops
+   trainer: sivakumar
+  tasks:
+  - name: printing variables
+    ansible.builtin.debug:
+     msg: "hello {{ name }} are you preparing for {{ course }} and trainer is {{ trainer }}""
