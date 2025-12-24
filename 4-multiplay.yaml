@@ -16,7 +16,7 @@
   tasks: 
   - name: performing multiplay play2 and task1
     ansible.builtin.debug:
-     msge: "hello from play2 and task1"
+     msg: "hello from play2 and task1"
 
   - name: performing multiplay play2 and task2
     ansible.builtin.debug:
