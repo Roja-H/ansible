@@ -4,7 +4,7 @@
   tasks:
   - name: printing variables
     ansible.builtin.debug:
-     msg: "hello roja are you preparing for devops and trainer is sivakumar"
+     msg: "hello shashi are you preparing for devops and trainer is shashikumar"
 
 - name: variables1
   hosts: local
@@ -16,4 +16,4 @@
   tasks:
   - name: printing variables
     ansible.builtin.debug:
-     msg: "hello {{ name }}, are you preparing for {{ course }}, and trainer is {{ trainer }}"
+     msg: "hello {{ name }} are you preparing for {{ course }} and trainer is {{ trainer }}"
