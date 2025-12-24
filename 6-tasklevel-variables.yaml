@@ -1,0 +1,20 @@
+- name: this is task level variables play1
+  hosts: local
+  connection: local
+  vars: 
+   name: roja
+   course: devops
+   trainer: sivakumar
+  tasks:
+  - name: perfoming variable under task level for play1
+    ansbile.builtin.debug:
+     msg: "hello {{ name }} im preparing for {{ course }} and learning from {{ trainer }}"
+
+
+- name : this is task level variables play1
+  hosts: local
+  connection: local
+  tasks:
+  - name: performing variable under play level
+    ansbile.builtin.debug:
+     msg: "hello {{ name }} im preparing for {{ course }} and learning from {{ trainer }}"
