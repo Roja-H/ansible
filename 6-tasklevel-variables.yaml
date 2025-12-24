@@ -7,14 +7,11 @@
    trainer: sivakumar
   tasks:
   - name: print course information
+    vars: 
+    course: ansible
     ansbile.builtin.debug:
      msg: "hello {{ student }} im preparing for {{ course }} and learning from {{ trainer }}"
 
-
-- name : this is task level variables play1
-  hosts: local
-  connection: local
-  tasks:
   - name: print course information
     ansbile.builtin.debug:
      msg: "hello {{ student }} im preparing for {{ course }} and learning from {{ trainer }}"
