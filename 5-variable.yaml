@@ -16,4 +16,4 @@
   tasks:
   - name: printing variables
     ansible.builtin.debug:
-     msg: "hello {{ name }} are you preparing for {{ course }} and trainer is {{ trainer }}""
+     msg: "hello {{ name }}, are you preparing for {{ course }}, and trainer is {{ trainer }}"
