@@ -1,10 +1,7 @@
 - name: hello world
   hosts: local
-  connection: local  # when we use local no need to use ansible username and password
+  connection: local # no need of username and password
   tasks:
-  - name: print hello world script
+  - name: print hello world
     ansible.builtin.debug:
-    msg: "hello world"
-    
-    
-
+      msg: "Hello World"
