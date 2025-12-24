@@ -1,0 +1,7 @@
+- name: installing servers
+  hosts: frontend
+  tasks:
+  - name: installing nginx
+    ansible.builtin.pacakge:
+     name: nginx
+     tasks: started
