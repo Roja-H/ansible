@@ -1,9 +1,10 @@
 - name: loops
   hosts: local
+  connection: local
   tasks:
   - name: print names
     ansible.builtin.debug:
-     msg: hey {{ item }} #here for loop reserve word is item
+     msg: "hey {{ item }}" #here for loop reserve word is item
     loop:
     - Roja 
     - soujanya
