@@ -10,4 +10,5 @@
 
   - name: print names
     ansible.builtin.debug:
-     msg: hey {{ persons }}
+     msg: hey {{ persons | split(',') }}  
+     #  answer with only person "msg": "hey rakesh,rajiv,lankesh"
