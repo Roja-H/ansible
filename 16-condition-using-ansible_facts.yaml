@@ -1,0 +1,8 @@
+- name: playbook contorl using ansible facts
+  hosts: frontend
+  tasks:
+  - name: installing nginx
+    ansible.builtin.dnf:
+     name: nginx
+     state: present
+     when: ansible_os_family == "RedHat"
