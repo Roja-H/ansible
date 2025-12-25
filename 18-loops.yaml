@@ -1,0 +1,12 @@
+- name: installing packages in loops
+  hosts: frontend
+  tasks:
+  - name: print packages
+    ansible.builtin.dnf:
+     name: {{ item }}
+     state: present
+    loop:
+    - mysql
+    - nginx
+    - catalogue
+     
