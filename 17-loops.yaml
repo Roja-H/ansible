@@ -1,0 +1,11 @@
+- name: loops
+  hosts: local
+  tasks:
+  - name: print names
+    ansible.builtin.debug:
+     msg: hey {{ item }} #here for loop reserve word is item
+    loop:
+    - Roja 
+    - soujanya
+    - shashi
+    - raju
