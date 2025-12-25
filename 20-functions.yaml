@@ -21,3 +21,12 @@
       standard: 10th
     ansible.builtin.debug:
      msg: "hey {{ details | dict2items }}"
+     #answer:  "msg": "hey [{'key': 'person', 'value': 'shashi'}, {'key': 'standard', 'value': '10th'}]"
+
+  - name: convert list to map
+    vars:
+     details:
+      person: shashi
+      standard: 10th
+    ansible.builtin.debug:
+     msg: "hey {{ details | items2dict }}"
