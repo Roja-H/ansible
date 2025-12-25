@@ -1,5 +1,6 @@
 - name: playbook contorl using ansible facts
   hosts: frontend
+  become: yes
   tasks:
   - name: installing nginx
     ansible.builtin.dnf:
