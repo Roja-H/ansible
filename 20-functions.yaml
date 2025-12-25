@@ -1,7 +1,9 @@
 - name: functions
   hosts: local
   connection: local
+  vars:
+   person: "rakesh,rajiv,lankesh"
   tasks:
   - name: check undefined variables
     ansible.builtin.debug:
-     msg: hey {{ person | default('ramesh') }}
+     msg: hey {{ person | default('ramesh') }} #this takes default as ramesh if we dont define person
