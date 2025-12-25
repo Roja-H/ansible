@@ -26,7 +26,8 @@
   - name: convert list to map
     vars:
      details:
-      person: shashi
+     - {'key': 'person', 'value': 'shashi'}
+     - {'key': 'standard', 'value': '10th'}
       standard: 10th
     ansible.builtin.debug:
      msg: "hey {{ details | items2dict }}"
