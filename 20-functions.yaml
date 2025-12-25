@@ -20,4 +20,4 @@
       person: shashi
       standard: 10th
     ansible.builtin.debug:
-     msg: "hey {{ details | dict2item }}"
+     msg: "hey {{ details | dict2items }}"
