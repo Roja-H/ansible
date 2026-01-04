@@ -1,6 +1,40 @@
+# - name: user creation
+#   hosts: local
+#   connection: local
+#   tasks:
+#    - name: check roboshop user exists or not
+#      ansible.builtin.command: id roboshop
+
+# answer : 
+# [ ec2-user@ip-172-31-7-35 ~/ansible ]$ ansible-playbook -i inventory.ini 21-user.yaml
+
+# PLAY [user creation] **************************************************************************************************************
+
+# TASK [Gathering Facts] ************************************************************************************************************
+# ok: [localhost]
+
+# TASK [check roboshop user exists or not] ******************************************************************************************
+# fatal: [localhost]: FAILED! => {"changed": true, "cmd": ["id", "roboshop"], "delta": "0:00:00.009286", "end": "2026-01-04 17:51:47.041353", "msg": "non-zero return code", "rc": 1, "start": "2026-01-04 17:51:47.032067", "stderr": "id: ‘roboshop’: no such user", "stderr_lines": ["id: ‘roboshop’: no such user"], "stdout": "", "stdout_lines": []}
+
+# PLAY RECAP ************************************************************************************************************************
+# localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
+
+#when we dont have module need to do idempotency and create manually
 - name: user creation
   hosts: local
   connection: local
   tasks:
    - name: check roboshop user exists or not
      ansible.builtin.command: id roboshop
+     register: output
+     ignore_errors: true
+
+- name: create user
+  ansible.builtin.command: useradd roboshop
+  when: output.rc !=0 # it means above tasks failure
+
+- name: user already exists
+  ansible.builtin.debug:
+   msg: "user already exists"
+  when: output.rc ==0 # it means failure
