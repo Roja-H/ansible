@@ -37,5 +37,5 @@
 
    - name: user already exists
      ansible.builtin.debug:
-     msg: "user already exists"
+      msg: "user already exists"
      when: output.rc ==0 # it means failure
