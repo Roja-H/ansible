@@ -30,18 +30,23 @@
      - {'key': 'standard', 'value': '10th'}
     ansible.builtin.debug:
      msg: "hey {{ details | items2dict }}"
+     # "msg": "hey {'person': 'shashi', 'standard': '10th'}"
+
   
   - name: convert to uppercase
     vars:
      name: "nice-to-see-you"
     ansible.builtin.debug:
      msg: " hello {{ name | upper}}"
+     #"msg": " hello NICE-TO-SEE-YOU"
+
 
   - name: convert to uppercase
     vars:
      name: "JINDHAL"
     ansible.builtin.debug:
      msg: " hello {{ name | lower}}"
+     "msg": " hello jindhal"
 
   - name: check IP address is valid or not
     vars:
