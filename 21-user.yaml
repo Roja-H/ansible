@@ -39,3 +39,26 @@
      ansible.builtin.debug:
       msg: "user already exists"
      when: output.rc ==0 # it means failure
+
+
+answer:
+[ ec2-user@ip-172-31-7-35 ~/ansible ]$ ansible-playbook -i inventory.ini 21-user.yaml
+
+PLAY [user creation] **************************************************************************************************************
+
+TASK [Gathering Facts] ************************************************************************************************************
+ok: [localhost]
+
+TASK [check roboshop user exists or not] ******************************************************************************************
+fatal: [localhost]: FAILED! => {"changed": true, "cmd": ["id", "roboshop"], "delta": "0:00:00.006076", "end": "2026-01-04 18:03:34.879741", "msg": "non-zero return code", "rc": 1, "start": "2026-01-04 18:03:34.873665", "stderr": "id: ‘roboshop’: no such user", "stderr_lines": ["id: ‘roboshop’: no such user"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+TASK [create user] ****************************************************************************************************************
+changed: [localhost]
+
+TASK [user already exists] ********************************************************************************************************
+skipping: [localhost]
+
+PLAY RECAP ************************************************************************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=1
+
